@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import { astroImageTools } from "astro-imagetools";
- 
 import mdx from "@astrojs/mdx";
 import m2dx from "astro-m2dx";
 import sitemap from "@astrojs/sitemap";
@@ -19,9 +18,9 @@ const m2dxOptions = {
   unwrapImages: true,
   autoImports: true,
 };
-
 // https://astro.build/config
 export default defineConfig({
+  compressHTML: true,
   site: "https://nebulix.unfolding.io",
   integrations: [
     mdx({}),
@@ -78,7 +77,6 @@ export default defineConfig({
       JavaScript: true,
       SVG: true,
     }),
-    
   ],
   markdown: {
     extendDefaultPlugins: true,

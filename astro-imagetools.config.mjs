@@ -1,8 +1,6 @@
 import { defineConfig } from "astro-imagetools/config";
-
 export default defineConfig({
   format: ["webp"],
-
   formatOptions: {
     jpg: {
       quality: 70,
