@@ -9,7 +9,6 @@ import { Icon } from "astro-icon";
 import { t } from "@util/translate";
 import "@fontsource-variable/inter-tight";
 import "@fontsource-variable/inter-tight/wght-italic.css";
-
 const lang = import.meta.env.WEBSITE_LANGUAGE;
 const currency = import.meta.env.CURRENCY;
 const snipcartKey = import.meta.env.SNIPCART_KEY;
@@ -18,7 +17,6 @@ const navigation = await getEntry("config", "navigation");
 const about = await getEntry("config", "about");
 const contact = await getEntry("config", "contact");
 ---
-
 <!doctype html>
 <html lang={lang} data-currency={currency}>
   <head>
@@ -63,7 +61,6 @@ const contact = await getEntry("config", "contact");
       </div>
     </Footer>
     <Init client:idle />
-
     <script>
       const html = document.getElementsByTagName("html")[0];
       const setDarkMode = () => {
@@ -71,7 +68,6 @@ const contact = await getEntry("config", "contact");
           document.documentElement.dataset.dark = "";
         }
       };
-
       const SmoothScroll = () => {
         html.style["scroll-behavior"] = "auto";
       };

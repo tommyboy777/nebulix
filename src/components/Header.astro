@@ -3,24 +3,22 @@ import NavMobile from "@components/navigation/NavMobile.vue";
 import { Icon } from "astro-icon";
 import PageFind from "@components/common/PageFind.astro";
 import CartButton from "@components/shop/CartButton.vue";
-import { t } from "@util/translate";
-
+import { t } from "@util/translate";import myImportedImage from `../assets/700.webp`;
+import { Image } from "astro:assets";
 const { menu, title, social } = Astro.props;
 const currentPath = Astro.url.pathname.split("/")[1];
-
 const isActive = (href) => {
   if (currentPath === "" && href == "/") return true;
   if (currentPath !== "" && href.startsWith(`/${currentPath}`)) return true;
 };
 ---
-
-<header class="surface-menu nav sticky top-0 z-50" transition:name="nav">
+<header class="surface-base nav sticky top-0 z-50" transition:name="nav">
   <nav class="container-xl flex flex-nowrap items-stretch gap-6">
     <a
       href="/"
       aria-label={title}
       class="grid place-items-center py-3 text-primary"
-      ><Icon name="logo" class="h-6" /></a
+      ><Image alt="Egyéni vállalkozó logo" src={myImportedImage}></Image></a
     >
     {
       menu && (
@@ -35,7 +33,6 @@ const isActive = (href) => {
         </ul>
       )
     }
-
     {
       (
         <ul class="nav-underline relative -mr-4  ml-auto flex flex-nowrap justify-end pl-4 uppercase md:mr-0">
@@ -52,7 +49,6 @@ const isActive = (href) => {
           <li>
             <PageFind />
           </li>
-
           {social &&
             social.slice(0, 3).map((link) => (
               <li class="hidden md:block">
@@ -66,14 +62,12 @@ const isActive = (href) => {
                 </a>
               </li>
             ))}
-
           <li class="md:hidden">
             <NavMobile
               client:idle
               translations={{ menu: t("menu"), close: t("close") }}
             >
               <Icon name="menu-solid" class="h-10 w-10" slot="menu" />
-
               <Icon name="close" class="h-10 w-10" slot="close" />
               <Icon name="logo" class="w-full" slot="logo" />
               <ul
@@ -95,7 +89,6 @@ const isActive = (href) => {
                   </li>
                 ))}
               </ul>
-
               <ul
                 class="relatives flex w-full flex-wrap justify-center gap-2 py-4"
                 slot="social"
@@ -133,14 +126,12 @@ const isActive = (href) => {
       @apply relative overflow-hidden;
       padding: calc(var(--_gap) / 2);
       min-inline-size: 1.3rem;
-
       &::after {
         @apply absolute rounded-full bg-primary;
         content: "";
         inset-inline: 0;
         inset-block-end: 0;
         block-size: 5px;
-
         translate: var(--_translate, 0);
         scale: var(--_scale, 0) 1;
         transition:
@@ -157,7 +148,6 @@ const isActive = (href) => {
       --_translate: 100%;
       --_scale-delay: 200ms;
     }
-
     li:hover {
       --_scale: 1;
       --_translate: 0;
