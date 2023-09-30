@@ -1,1 +1,1 @@
-import"./BackgroundImage.astro_astro_type_script_index_0_lang.06d8a163.js";import"./hoisted.ad8917a4.js";const o=document.getElementsByTagName("html")[0],t=()=>{o.style["scroll-behavior"]="auto"};t();document.addEventListener("astro:beforeload",t);
+import"./BackgroundImage.astro_astro_type_script_index_0_lang.06d8a163.js";import"./hoisted.ad8917a4.js";const o=document.getElementsByTagName("html")[0],t=()=>{o.style["scroll-behavior"]="auto"};t(),document.addEventListener("astro:beforeload",t);
