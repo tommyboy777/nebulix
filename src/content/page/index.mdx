@@ -17,7 +17,7 @@ layout-hidden: blog
 blocks:
   - type: features
     component: Features
-    container: lg
+    container: md
     block_class: " py-20 text-center"
     features:
       - content: >
@@ -48,8 +48,7 @@ blocks:
         color: surface-warning
         href: ""
     content: |+
-      ## A SIKERES EGYÉNI VÁLLALKOZÓ ALAPOS ÉS KÖRÜLTEKINTŐ:
-      #### KELLŐ ODAFIGYELÉSSEL
+      ## A SIKERES EGYÉNI VÁLLALKOZÓ ALAPOS ÉS KÖRÜLTEKINTŐ, KELLŐ ODAFIGYELÉSSEL:
     surface: bg-slate-200 text-dark dark:bg-slate-900 dark:text-white
   - type: text_image
     component: TextImage
@@ -58,26 +57,23 @@ blocks:
     title: My Image
     image_size: "66"
     reverse: true
-    animate: false
+    animate: true
     block_class: ""
-    thumbnail: /src/assets/perfect_pagespeed_scores.png
+    thumbnail: /src/assets/laptopos.png
     content: >
-      ## **A perfect page speed score** Optimized Speed and Accessibility
-      Our perfect 100% page speed score and compliance with WCAG 2.1 AA standards reflect our commitment. We've optimized speed and accessibility, ensuring a superior user experience for all.
+      ### Indíts be Te is a vállalkozásodat!
   - type: recentitems
     component: RecentItems
     page_type: blog
-    count: 3
+    count: 2
     container: md
     template: list
     animate: true
     post_tag:
       - Docs
-    title: Check out our documentation
     surface: bg-slate-200 text-dark dark:bg-slate-800 dark:text-white
     content: >
-      Getting started is easy, just clone the repo, configure and you are ready
-      to go.
+      Szakértői segítség bevonásával írtuk meg a gyakran frissülő blogot.
   - type: text_image
     component: TextImage
     container: none
@@ -85,15 +81,13 @@ blocks:
     title: My Image
     reverse: true
     content: >
-      ## Nebulix Webshop
-      Discover the seamless integration of Snipcart, empowering you to efficiently oversee your store directly within a Static CMS. Whether your offerings include digital products or physical goods, Snipcart boasts a wealth of exceptional features, making it an ideal choice for the majority of small webshops. 
-      Read more about [SnipCart](https://snipcart.com/).
-    thumbnail: /src/assets/nebulix_merch.jpeg
+      <h2 style="padding-top:50px;"> "Nem bántam meg, hogy egyéni vállalkozást..."  </h2> <h5> L.Tibor Visegrád</h5>
+    thumbnail: /src/assets/autoszerelo.png
     buttons:
       - icon_only: false
-        label: Demo Shop
-        href: /shop
-        icon: /src/icons/shop.svg
+        label: Kapcsolat
+        href: /kapcsolat
+        icon: /src/icons/email.svg
         color: surface-primary
     aspect: ""
     image_size: ""
@@ -103,35 +97,15 @@ blocks:
     component: RichText
     container: sm
     content: >
-      ## Nebulix Portfolio
-      Need to show your skills, select a good template and build your portfolio with nebulix.
+      ## Aktuális pályázati lehetőségeket
+      tudsz igénybe venni.
     buttons:
       - icon_only: false
-        label: Portfolio Demo
-        href: /work
+        label: Pályázatok
+        href: /palyzatok
         color: surface-primary
         icon: /src/icons/portfolio.svg
     block_class: py-20 text-center
-  - type: text_image
-    component: TextImage
-    container: none
-    template: banner
-    image_size: ""
-    title: My Image
-    reverse: false
-    animate: false
-    thumbnail: /src/assets/cosmic_coctails_3.jpeg
-    content: >+
-      ## Nebulix Restaurant Menus
-      Create a great menu, you can even shop arlercic information and labels. All menu's are mobile friendly and fast!
-    buttons:
-      - icon_only: false
-        label: Demo Menu
-        color: surface-primary
-        icon: /src/icons/menu.svg
-        href: /menu/drinks
-        class_name: py-0
-    block_class: my-0
 style:
   hero_template: image
   template: full

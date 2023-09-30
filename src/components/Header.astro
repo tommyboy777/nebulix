@@ -3,7 +3,8 @@ import NavMobile from "@components/navigation/NavMobile.vue";
 import { Icon } from "astro-icon";
 import PageFind from "@components/common/PageFind.astro";
 import CartButton from "@components/shop/CartButton.vue";
-import { t } from "@util/translate";import myImportedImage from `../assets/700.webp`;
+import { t } from "@util/translate";
+import myImportedImage from `../assets/700.png`;
 import { Image } from "astro:assets";
 const { menu, title, social } = Astro.props;
 const currentPath = Astro.url.pathname.split("/")[1];
@@ -12,7 +13,7 @@ const isActive = (href) => {
   if (currentPath !== "" && href.startsWith(`/${currentPath}`)) return true;
 };
 ---
-<header class="surface-base nav sticky top-0 z-50" transition:name="nav">
+<header class="surface-menu nav sticky top-0 z-50" transition:name="nav">
   <nav class="container-xl flex flex-nowrap items-stretch gap-6">
     <a
       href="/"
