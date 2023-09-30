@@ -1,14 +1,15 @@
 <template>
-  <button :aria-label="show ? translations.close : translations.menu" @click="toggleMenu()" :class="` nav-mobile-btn relative  ml-auto flex  text-primary md:hidden ${show ? 'bg-transparent ' : ''
-    }`">
-    <slot name="menu" class="w-7 text-dark" v-if="!show" />
+  <button style="margin-top:38px;" :aria-label="show ? translations.close : translations.menu" @click="toggleMenu()"
+    :class="` nav-mobile-btn relative  ml-auto flex  text-primary md:hidden ${show ? 'bg-transparent ' : ''
+      }`">
+    <slot name="menu" class="w-7  text-dark" v-if="!show" />
     <slot name="close" class="w-7" v-if="show" />
   </button>
   <transition name="nested">
     <div
       class="bg-opacity-95   bg-dark nav-mobile fixed inset-0 grid h-full auto-rows-min place-items-center gap-4 px-4 pt-4"
       v-show="show">
-      <div class="mx-auto max-w-[12rem] pt-10"></div>
+      <div class="mx-auto  px-10"></div>
       <a href="/" aria-label={title} class="grid place-items-center py-3 text-primary">
         <Image alt="Egyéni vállalkozó logo" src={myImportedImage}></Image>
       </a>
