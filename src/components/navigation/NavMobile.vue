@@ -1,5 +1,5 @@
 <template>
-  <button style="margin-top:38px;" :aria-label="show ? translations.close : translations.menu" @click="toggleMenu()"
+  <button style="margin-top:18px;" :aria-label="show ? translations.close : translations.menu" @click="toggleMenu()"
     :class="` nav-mobile-btn relative  ml-auto flex  text-primary md:hidden ${show ? 'bg-transparent ' : ''
       }`">
     <slot name="menu" class="w-7  text-dark" v-if="!show" />

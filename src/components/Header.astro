@@ -19,11 +19,11 @@ const isActive = (href) => {
       href="/"
       aria-label={title}
       class="grid place-items-center py-3 text-primary"
-      ><Image alt="Egyéni vállalkozó logo" src={myImportedImage}></Image></a
+      ><Image alt="Egyéni vállalkozó logo"  style="width:130px !important" src={myImportedImage}></Image></a
     >
     {
       menu && (
-        <ul class="nav-underline nav-links relative hidden flex-nowrap pl-4 uppercase tracking-wide before:absolute before:inset-y-4 before:left-0 before:border-l-2 before:border-primary before:border-opacity-50 md:flex ">
+        <ul class="my-6 nav-underline nav-links relative hidden flex-nowrap pl-4 uppercase tracking-wide before:absolute before:inset-y-4 before:left-0 before:border-l-2 before:border-primary before:border-opacity-50 md:flex ">
           {menu.map((link) => (
             <li class={`${isActive(link.href) ? "active font-semibold" : ""}`}>
               <a href={link.href} class={`block py-3`}>

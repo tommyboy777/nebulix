@@ -1,7 +1,5 @@
 import { defineCollection, reference, z } from 'astro:content'
 import { getIconName } from '@util/helpers'
- 
-
 const blocks = z
 	.array(
 		z.object({
@@ -64,7 +62,6 @@ const blocks = z
 		})
 	)
 	.optional()
-
 const style = z.object({
 	template: z.string().optional(),
 	card_template: z.string().optional(),
@@ -77,7 +74,6 @@ const style = z.object({
 	block_class: z.string().optional(),
 	hero_class: z.string().optional()
 })
-
 const blog = defineCollection({
 	type: 'content',
 	schema: z.object({
@@ -103,7 +99,6 @@ const blog = defineCollection({
 			.string()
 			.or(z.date())
 			.transform((val) => new Date(val)),
-
 		nav: z
 			.object({
 				next: z
@@ -114,7 +109,6 @@ const blog = defineCollection({
 						})
 					)
 					.optional(),
-
 				prev: z
 					.array(
 						z.object({
@@ -125,12 +119,10 @@ const blog = defineCollection({
 					.optional()
 			})
 			.optional(),
-
 		blocks: blocks,
 		style: style
 	})
 })
-
 const project = defineCollection({
 	type: 'content',
 	schema: z.object({
@@ -164,7 +156,6 @@ const project = defineCollection({
 			.string()
 			.or(z.date())
 			.transform((val) => new Date(val)),
-
 		style: style,
 		blocks: blocks,
 		nav: z
@@ -177,7 +168,6 @@ const project = defineCollection({
 						})
 					)
 					.optional(),
-
 				prev: z
 					.array(
 						z.object({
@@ -190,7 +180,6 @@ const project = defineCollection({
 			.optional()
 	})
 })
-
 const product = defineCollection({
 	type: 'content',
 	schema: z.object({
@@ -233,7 +222,6 @@ const product = defineCollection({
 				length: z.number().optional()
 			})
 			.optional(),
-
 		category: z.array(z.string()).optional(),
 		features: z
 			.array(
@@ -286,7 +274,6 @@ const product = defineCollection({
 			.string()
 			.or(z.date())
 			.transform((val) => new Date(val)),
-
 		style: style,
 		blocks: blocks,
 		nav: z
@@ -299,7 +286,6 @@ const product = defineCollection({
 						})
 					)
 					.optional(),
-
 				prev: z
 					.array(
 						z.object({
@@ -312,7 +298,6 @@ const product = defineCollection({
 			.optional()
 	})
 })
-
 const menu = defineCollection({
 	type: 'content',
 	schema: z.object({
@@ -350,7 +335,6 @@ const menu = defineCollection({
 								})
 							)
 							.optional(),
-
 						details: z
 							.object({
 								allergens: z.array(z.string()).optional().or(z.string()),
@@ -392,7 +376,6 @@ const menu = defineCollection({
 						})
 					)
 					.optional(),
-
 				prev: z
 					.array(
 						z.object({
@@ -405,7 +388,6 @@ const menu = defineCollection({
 			.optional()
 	})
 })
-
 const page = defineCollection({
 	type: 'content',
 	schema: z.object({
@@ -417,7 +399,6 @@ const page = defineCollection({
 		template: z.string().optional(),
 		container: z.string().optional(),
 		hero_template: z.string().optional(),
-
 		hero_buttons: z
 			.array(
 				z.object({
@@ -430,15 +411,10 @@ const page = defineCollection({
 				})
 			)
 			.optional(),
-
 		blocks: blocks,
-
 		style: style
-
-		
 	})
 })
-
 const config = defineCollection({
 	type: 'content',
 	schema: z.object({
@@ -467,7 +443,6 @@ const config = defineCollection({
 				})
 			)
 			.optional(),
-
 		team: z
 			.array(
 				z.object({
@@ -477,7 +452,6 @@ const config = defineCollection({
 				})
 			)
 			.optional(),
-
 		blog_tags: z
 			.array(
 				z.object({
@@ -503,7 +477,6 @@ const config = defineCollection({
 				})
 			)
 			.optional(),
-
 		project_tags: z
 			.array(
 				z.object({
@@ -529,7 +502,6 @@ const config = defineCollection({
 				})
 			)
 			.optional(),
-
 		product_categories: z
 			.array(
 				z.object({
@@ -556,9 +528,7 @@ const config = defineCollection({
 				})
 			)
 			.optional(),
-
 		style: style.optional(),
-
 		main_menu: z
 			.array(
 				z.object({
@@ -567,7 +537,6 @@ const config = defineCollection({
 				})
 			)
 			.optional(),
-
 		footer_menus: z
 			.array(
 				z.object({
@@ -581,7 +550,6 @@ const config = defineCollection({
 				})
 			)
 			.optional(),
-
 		social: z
 			.array(
 				z.object({
@@ -593,5 +561,4 @@ const config = defineCollection({
 			.optional()
 	})
 })
-
 export const collections = { blog, page, menu, project, product, config }
