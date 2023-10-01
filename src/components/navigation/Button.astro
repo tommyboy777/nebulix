@@ -4,7 +4,6 @@ import { getIconName } from "@util/helpers";
 const { href, label, icon, icon_only, color, className } = Astro.props;
 const target = href.includes("http") ? "_blank" : "_self";
 ---
-
 <a
   href={href}
   class={`btn ${color || `surface-primary`} ${className || ""} ${
@@ -13,5 +12,5 @@ const target = href.includes("http") ? "_blank" : "_self";
   target={target}
 >
   {icon && <Icon name={getIconName(icon)} class="h-6 w-6" />}
-  {!icon_only && <span>{label}</span>}
+  {!icon_only && <span style="font-size:25px;letter-spacing: 1px;" class="pt-1 px-3">{label}</span>}
 </a>

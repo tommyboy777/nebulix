@@ -3,7 +3,6 @@ import { Picture } from "astro-imagetools/components";
 import Button from "@components/navigation/Button.astro";
 import ItemFilter from "@components/navigation/ItemFilter.astro";
 import FormattedDate from "@components/FormattedDate.astro";
-
 const {
   title,
   thumbnail,
@@ -17,10 +16,8 @@ const {
   pubDate,
   base_url,
 } = Astro.props;
-
 const { slug } = Astro.params;
 ---
-
 <div
   class={`relative overflow-hidden  sm:h-screen nebulix-parallax ${
     style.hero_surface || "surface-dark"
@@ -66,7 +63,6 @@ const { slug } = Astro.params;
       </div>
     )
   }
-
   <div
     class="absolute inset-0 z-10 grid place-items-center bg-dark bg-opacity-20"
   >
@@ -82,8 +78,7 @@ const { slug } = Astro.params;
         <h1 class="title">
           {title}
         </h1>
-        {intro && <div class="subtitle balance py2"> {intro}</div>}
-
+        {intro && <div class="subtitle balance py2"><strong> {intro}</strong></div>}
         {
           tag && (
             <ItemFilter
@@ -94,7 +89,6 @@ const { slug } = Astro.params;
             />
           )
         }
-
         {
           filters && (
             <ItemFilter
@@ -109,7 +103,7 @@ const { slug } = Astro.params;
         }
         {
           hero_buttons && hero_buttons.length > 0 && (
-            <div class="flex flex-wrap gap-4 py-8">
+            <div class="flex subtitle flex-wrap gap-4 py-8">
               {hero_buttons.map((btn) => (
                 <Button {...btn} />
               ))}
