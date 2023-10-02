@@ -5,7 +5,6 @@ import ProductVariationImageWrap from "@components/shop/ProductVariationImageWra
 import Block from "@components/block/Block.astro";
 import { getImageUrl, getImageTransitionName } from "@util/helpers";
 import { t } from "@util/translate";
-
 const {
   title,
   description,
@@ -18,13 +17,11 @@ const {
 } = Astro.props;
 const { slug } = Astro.params;
 const pageTitle = `${title}`;
-
 const isPng = (thumbnail) => {
   return thumbnail.endsWith(".png");
 };
 const hasBlocks = blocks && blocks.length > 0;
 ---
-
 <BaseLayout
   title={pageTitle}
   {description}
@@ -91,7 +88,6 @@ const hasBlocks = blocks && blocks.length > 0;
             ))
         }
       </div>
-
       <div
         class="scroll-container relative bottom-0 z-50 mt-auto flex w-full justify-start backdrop-blur-sm"
       >
@@ -114,7 +110,6 @@ const hasBlocks = blocks && blocks.length > 0;
             layout="fullWidth"
           />
         </a>
-
         {
           variation_images &&
             variation_images.map((image) => (
@@ -145,7 +140,6 @@ const hasBlocks = blocks && blocks.length > 0;
         }
       </div>
     </div>
-
     <div
       class="page-split__content z-0 mb-0 mt-8 w-full md:max-w-2xl md:pl-0 md:pr-8"
     >
@@ -153,13 +147,11 @@ const hasBlocks = blocks && blocks.length > 0;
         <div class="flex flex-col gap-4">
           <div class="grid gap-1">
             <slot name="breadcrumb" />
-
             <h1 class="title">
               {title}
             </h1>
             {intro && <div class="subtitle balance"> {intro} </div>}
           </div>
-
           <slot />
         </div>
       </div>
@@ -180,12 +172,10 @@ const hasBlocks = blocks && blocks.length > 0;
       </>
     )
   }
-
   <div class="pointer-events-none fixed bottom-0 z-40 w-full" slot="footer">
     <slot name="cart" />
   </div>
 </BaseLayout>
-
 <style lang="postcss">
       .page-split{
         &__grid {
@@ -201,13 +191,10 @@ const hasBlocks = blocks && blocks.length > 0;
         &__title{
           background: radial-gradient(circle, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0) 90%);
         }
-
 		&__content {
 			padding-inline: var(--spacing);
-		 
 		}
       }
-
 	  .scroll-container {
 		  scroll-snap-type: x mandatory;  
 			display: flex;
@@ -216,19 +203,15 @@ const hasBlocks = blocks && blocks.length > 0;
 			scrollbar-width: none;
 			gap: var(--spacing);
 			padding: var(--spacing);
-
 			a {
 				scroll-snap-align: center;  
 				flex-shrink: 0;
 				display: flex;
 				justify-content: center;
 				align-items: center; 
-				
 				}
-
 	}
 </style>
-
 <style is:global>
   .page-split__content {
     .img,
