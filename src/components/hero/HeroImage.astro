@@ -18,6 +18,7 @@ const {
 } = Astro.props;
 const { slug } = Astro.params;
 ---
+
 <div
   class={`relative overflow-hidden  sm:h-screen nebulix-parallax ${
     style.hero_surface || "surface-dark"
@@ -32,7 +33,7 @@ const { slug } = Astro.params;
           attributes={{
             picture: {
               class: "sm:h-screen",
-              style: `opacity: ${style.hero_image_opacity || 0.7}`,
+              style: `opacity: ${style.hero_image_opacity || 0.9}`,
             },
           }}
           src={thumbnail}
@@ -78,7 +79,13 @@ const { slug } = Astro.params;
         <h1 class="title">
           {title}
         </h1>
-        {intro && <div class="subtitle balance py2"><strong> {intro}</strong></div>}
+        {
+          intro && (
+            <div class="subtitle balance py2">
+              <strong> {intro}</strong>
+            </div>
+          )
+        }
         {
           tag && (
             <ItemFilter
@@ -103,7 +110,7 @@ const { slug } = Astro.params;
         }
         {
           hero_buttons && hero_buttons.length > 0 && (
-            <div class="flex subtitle flex-wrap gap-4 py-8">
+            <div class="subtitle flex flex-wrap gap-4 py-8">
               {hero_buttons.map((btn) => (
                 <Button {...btn} />
               ))}
