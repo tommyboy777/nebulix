@@ -21,7 +21,7 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  site: "https://komarom.eu",
+  site: "https://www.egyenivallalkozo.net",
   integrations: [
     mdx({}),
     sitemap(),
