@@ -24,12 +24,13 @@ const { image } = Astro.props;
 const { slug } = Astro.params;
 const title = toHeaderCase(slug);
 ---
+
 <!doctype html>
 <html lang="en" data-pagefind-ignore="all">
   <head>
     <BaseHead title={title} description={`${t("image")}: ${title}`} />
   </head>
-  <body class=" relative grid h-screen w-full place-items-center">
+  <body class="relative grid h-screen w-full place-items-center">
     <ImageNav
       client:idle
       translations={{ next: t("next"), prev: t("prev"), close: t("close") }}
