@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import { astroImageTools } from "astro-imagetools";
 import mdx from "@astrojs/mdx";
 import m2dx from "astro-m2dx";
-import sitemap from "@astrojs/sitemap";
+import sitemap from "astro-sitemap";
 import tailwind from "@astrojs/tailwind";
 import rehypeExternalLinks from "rehype-external-links";
 import fauxRemarkEmbedder from "@remark-embedder/core";
@@ -25,9 +25,8 @@ export default defineConfig({
   integrations: [
     mdx({}),
    sitemap({
-    exclude: [ 'images/'],
-  }),
-    tailwind(),
+    exclude: [ 'images/*','licence','about-nebulix','admin','licence','shop'],  }),
+        tailwind(),
     vue({
       appEntrypoint: "/src/pages/_app",
     }),
