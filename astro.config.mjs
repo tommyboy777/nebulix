@@ -24,7 +24,8 @@ export default defineConfig({
   site: "https://www.egyenivallalkozo.net",
   integrations: [
     mdx({}),
-    sitemap(),
+    sitemap(    exclude: ['404', 'images/*'],
+),
     tailwind(),
     vue({
       appEntrypoint: "/src/pages/_app",
