@@ -7,7 +7,7 @@ import en from '@locales/en.json';
 import de from '@locales/de.json';
 import es from '@locales/es.json';
 import hr from '@locales/hr.json';
-const lang = import.meta.env.WEBSITE_LANGUAGE;
+const lang = "hu";
 export const t = (field: string): string => {
     const translations: Record<string, Locale>  = {
         en: en,
