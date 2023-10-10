@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 import { astroImageTools } from "astro-imagetools";
 import mdx from "@astrojs/mdx";
 import m2dx from "astro-m2dx";
+import react from "@astrojs/react";           
+
 import sitemap from "astro-sitemap";
 import tailwind from "@astrojs/tailwind";
 import rehypeExternalLinks from "rehype-external-links";
@@ -22,7 +24,7 @@ const m2dxOptions = {
 export default defineConfig({
   compressHTML: true,
   site: "https://www.egyenivallalkozo.net",
-  integrations: [
+  integrations: [react(),
     mdx({}),
    sitemap({
     exclude: [ 'images/*','licence','about-nebulix','admin','licence','shop'],  }),
