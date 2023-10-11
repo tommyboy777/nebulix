@@ -21,7 +21,7 @@ import { Icon } from "astro-icon";
     class="flex content-center items-center"
   >
     <a href={`/${urlArray[1]}`} itemprop="item"
-      ><span itemprop="name">{urlArray[1]}</span>
+      ><span itemprop="name">{urlArray[1]} megnyitása</span>
       <meta itemprop="position" content="1" /></a
     >
     <Icon name="right" class="h-3 w-3 pl-1" />
@@ -37,7 +37,7 @@ import { Icon } from "astro-icon";
           href={`/${urlArray[1]}/${filter.type}/${slugify(filter.name)}`}
           itemprop="item"
         >
-          <span itemprop="name">{filter.name}</span>
+          <span itemprop="name">{filter.name} megnyitása</span>
           <meta itemprop="position" content="2" />
         </a>
         <Icon name="right" class="h-3 w-3 pl-1" />
@@ -52,7 +52,7 @@ import { Icon } from "astro-icon";
     class="flex max-w-xs shrink content-center items-center"
   >
     <span itemprop="name" class="line-clamp-1 opacity-80">
-      {title}
+      {title} .
       <meta itemprop="position" content={filter ? "3" : "2"} />
     </span>
   </li>
